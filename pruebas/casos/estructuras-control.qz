@@ -1,0 +1,51 @@
+vacio evaluar(entero valor) {
+    si (valor > 10) {
+        consola.mostrar("mayor")
+    } sino si (valor == 10) {
+        consola.mostrar("igual")
+    } sino {
+        consola.mostrar("menor")
+    }
+
+    mientras (valor > 0) {
+        valor--
+        si (valor == 2) {
+            continuar
+        }
+        si (valor < 0) {
+            romper
+        }
+    }
+
+    hacer {
+        valor += 1
+    } mientras (valor < 3)
+
+    para (entero i = 0; i < 3; i++) {
+        consola.mostrar(t"Índice: {i}")
+    }
+
+    lista<entero> elementos = [1, 2, 3]
+    para (entero elemento en elementos) {
+        consola.mostrar(elemento.texto())
+    }
+
+    para (entero cada_elemento cada elementos) {
+        consola.mostrar(cada_elemento.texto())
+    }
+
+    intentar {
+        si (valor < 0) {
+            lanzar "Valor negativo"
+        }
+    } capturar (excepcion error) {
+        consola.mostrar(error)
+    } finalmente {
+        consola.mostrar("Fin")
+    }
+}
+
+asincrono entero operacion(entero valor) {
+    entero resultado = esperar operacion_interna(valor)
+    retornar resultado > 0 ? resultado : -resultado
+}

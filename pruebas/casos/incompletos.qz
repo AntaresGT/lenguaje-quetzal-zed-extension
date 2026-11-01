@@ -1,0 +1,11 @@
+vacio funcion_incompleta(entero valor {
+    si (valor > 0) {
+        consola.mostrar(t"Valor: {valor")
+    }
+
+lista<entero> valores = [1, 2,
+
+objeto ObjetoIncompleto {
+    publico:
+        texto metodo_sin_cierre() {
+            retornar "pendiente"

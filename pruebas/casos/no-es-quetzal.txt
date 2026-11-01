@@ -1,0 +1,1 @@
+Este archivo de texto sirve para comprobar que Zed no lo asocia automáticamente con Quetzal.

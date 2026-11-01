@@ -1,0 +1,15 @@
+importar {
+    sumar,
+    ObjetoRemoto como Remoto,
+} desde "./modulos/utilidades.qz"
+
+exportar {
+    calcular,
+    Remoto,
+}
+
+entero calcular(entero valor) {
+    retornar sumar(valor, 1)
+}
+
+entero resultado = calcular(41)

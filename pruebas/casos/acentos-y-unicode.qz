@@ -1,0 +1,31 @@
+número var años = 1
+texto var niño = "José"
+texto dirección = t"Niño: {niño}; años: {años}"
+log decisión = verdadero
+lista<texto> nombres_año = ["Ana", "Óscar", "María"]
+
+vació función_acentuada(texto parámetro) {
+    consola.mostrar(parámetro)
+}
+
+asincróno número cálculo_año(número valor) {
+    retornar valor
+}
+
+sí (decisión) {
+    función_acentuada(dirección)
+} sino {
+    consola.mostrar("Sin acción")
+}
+
+objeto Año {
+    público:
+        texto var descripción = "Año actual"
+
+        texto obtener_descripción() {
+            retornar esto.descripción
+        }
+}
+
+Año instancia = nuevo Año()
+número resultado = esperar cálculo_año(2026)

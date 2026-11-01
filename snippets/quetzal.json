@@ -1,0 +1,113 @@
+{
+  "Condicional con sino": {
+    "prefix": "si",
+    "body": [
+      "si (${1:condicion}) {",
+      "    $2",
+      "} sino {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta un condicional de Quetzal con una rama sino"
+  },
+  "Bucle mientras": {
+    "prefix": "mientras",
+    "body": [
+      "mientras (${1:condicion}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta un bucle mientras de Quetzal"
+  },
+  "Bucle para con contador": {
+    "prefix": "para",
+    "body": [
+      "para (entero ${1:i} = 0; ${1:i} < ${2:limite}; ${1:i}++) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta un bucle para con contador de Quetzal"
+  },
+  "Bucle para con colección": {
+    "prefix": "paracada",
+    "body": [
+      "para (${1:entero} ${2:elemento} en ${3:coleccion}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta un bucle para que recorre una colección de Quetzal"
+  },
+  "Bucle hacer-mientras": {
+    "prefix": "hacer",
+    "body": [
+      "hacer {",
+      "    $1",
+      "} mientras (${2:condicion})"
+    ],
+    "description": "Inserta un bucle hacer-mientras de Quetzal"
+  },
+  "Función con tipo": {
+    "prefix": "funcion",
+    "body": [
+      "${1:vacio} ${2:nombre}(${3}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta una función de Quetzal con tipo de retorno"
+  },
+  "Declaración de objeto": {
+    "prefix": "objeto",
+    "body": [
+      "objeto ${1:Nombre} {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta una declaración de objeto de Quetzal"
+  },
+  "Declaración de prototipo": {
+    "prefix": "prototipo",
+    "body": [
+      "prototipo ${1:Nombre} {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta una declaración de prototipo de Quetzal"
+  },
+  "Manejo de excepciones": {
+    "prefix": "intentar",
+    "body": [
+      "intentar {",
+      "    $1",
+      "} capturar (excepcion ${2:error}) {",
+      "    $3",
+      "} finalmente {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta manejo de excepciones de Quetzal con capturar y finalmente"
+  },
+  "Declaración de importación": {
+    "prefix": "importar",
+    "body": "importar { ${1:simbolo} } desde \"${2:modulo}\"",
+    "description": "Inserta una declaración de importación de Quetzal"
+  },
+  "Declaración de exportación": {
+    "prefix": "exportar",
+    "body": "exportar { ${1:simbolo} }",
+    "description": "Inserta una declaración de exportación de Quetzal"
+  },
+  "Función asíncrona": {
+    "prefix": "asincrono",
+    "body": [
+      "asincrono ${1:vacio} ${2:nombre}(${3}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Inserta una función asíncrona de Quetzal con tipo de retorno"
+  },
+  "Expresión esperar": {
+    "prefix": "esperar",
+    "body": "esperar ${1:expresion}",
+    "description": "Inserta una expresión esperar de Quetzal"
+  }
+}

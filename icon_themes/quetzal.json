@@ -1,0 +1,31 @@
+{
+  "$schema": "https://zed.dev/schema/icon_themes/v0.3.0.json",
+  "name": "Quetzal Icons",
+  "author": "AntaresGT",
+  "themes": [
+    {
+      "name": "Quetzal Icons",
+      "appearance": "dark",
+      "file_suffixes": {
+        "qz": "quetzal"
+      },
+      "file_icons": {
+        "quetzal": {
+          "path": "./icons/quetzal.png"
+        }
+      }
+    },
+    {
+      "name": "Quetzal Icons",
+      "appearance": "light",
+      "file_suffixes": {
+        "qz": "quetzal"
+      },
+      "file_icons": {
+        "quetzal": {
+          "path": "./icons/quetzal.png"
+        }
+      }
+    }
+  ]
+}

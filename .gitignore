@@ -1,0 +1,6 @@
+.tmp/
+*.wasm
+*.so
+*.dylib
+*.dll
+.DS_Store

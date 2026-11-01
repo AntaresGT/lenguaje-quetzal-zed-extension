@@ -1,0 +1,31 @@
+// Comentario de línea
+/* Comentario
+   de bloque */
+
+entero var contador = 42
+número decimal = 3.1416
+texto saludo = "Hola\nQuetzal"
+texto presentacion = t"Resultado: {contador + 1}"
+log activo = verdadero
+log terminado = falso
+jsn valor_nulo = nulo
+lista<entero> numeros = [1, 2, 3, 4]
+lista valores = [1, "dos", falso, [3, 4]]
+jsn configuracion = {
+    nombre: "Quetzal",
+    version: "0.1.0",
+    activo: verdadero,
+    "clave textual": nulo
+}
+
+entero sumar(entero a, entero var b) {
+    b += a
+    retornar b
+}
+
+vacio mostrar_resultado(texto var mensaje) {
+    consola.mostrar(mensaje)
+}
+
+entero resultado = sumar(20, 22)
+mostrar_resultado(t"El resultado es {resultado}")

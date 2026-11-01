@@ -1,0 +1,11 @@
+name = "Quetzal"
+grammar = "quetzal"
+path_suffixes = ["qz"]
+line_comments = ["// "]
+tab_size = 4
+hard_tabs = false
+increase_indent_pattern = '^\s*(p[uúù]blico|privado)\s*:\s*(//.*)?$'
+decrease_indent_patterns = [
+  { pattern = '^\s*sino\b', valid_after = ["if"] },
+  { pattern = '^\s*(p[uúù]blico|privado)\s*:', valid_after = ["visibility"] },
+]

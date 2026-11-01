@@ -1,0 +1,40 @@
+prototipo Identificable {
+    texto obtener_id()
+    log opcional es_valido(texto var valor)
+}
+
+objeto Entidad {
+    texto origen() {
+        retornar "base"
+    }
+}
+
+objeto Usuario hereda Entidad como UsuarioBase implementa Identificable {
+    privado:
+        texto var identificador
+        entero var contador = 0
+
+    publico:
+        Usuario(texto identificador) {
+            esto.identificador = identificador
+        }
+
+        libre asincrono texto crear_id(texto prefijo) {
+            retornar prefijo + "-quetzal"
+        }
+
+        texto obtener_id() {
+            esto.contador++
+            retornar esto.identificador
+        }
+
+        log es_valido(texto var valor) {
+            retornar valor != "" y esto.contador >= 0
+        }
+}
+
+Usuario usuario = nuevo Usuario("u-01")
+texto id = usuario.obtener_id()
+texto id_futuro = esperar Usuario.crear_id("u")
+log valido = usuario.es_valido(id)
+texto base = padre.origen()

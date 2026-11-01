@@ -1,0 +1,12 @@
+id = "quetzal"
+name = "Lenguaje Quetzal"
+version = "0.1.0"
+schema_version = 1
+authors = ["AntaresGT"]
+description = "Language support for Quetzal"
+repository = "https://github.com/AntaresGT/lenguaje-quetzal-zed-extension"
+snippets = ["./snippets/quetzal.json"]
+
+[grammars.quetzal]
+repository = "https://github.com/AntaresGT/tree-sitter-quetzal"
+rev = "769de1c803cb00ba9863bb68735caf306d7857a1"
