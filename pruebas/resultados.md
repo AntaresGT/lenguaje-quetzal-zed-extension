@@ -44,9 +44,18 @@ No se controló la GUI de Zed. Todos estos casos quedan **no ejecutados**, no ap
 | QZ-014 y QZ-015 | No ejecutado | Instalación, desinstalación y reinstalación son operaciones manuales de Zed. |
 | QZ-016 | No ejecutado | Requiere modo Vim en Zed. |
 | QZ-017 | No ejecutado | Requiere seleccionar el tema de iconos y revisar archivos en la interfaz. |
+| QZ-018 | No ejecutado | Requiere reinstalar la dev extension y probar el LSP desde la interfaz de Zed. |
+
+## Verificación de la integración LSP
+
+- `cargo check`: aprobado para el componente Rust con `zed_extension_api` 0.7.0.
+- `cargo fmt --check`: aprobado.
+- `python3 pruebas/validar.py`: aprobado, 141 comprobaciones.
+- Ejecutable `quetzal-lsp --stdio`: aprobado mediante mensajes LSP reales de inicialización, apertura de documento, autocompletado y cierre. La solicitud para `hola.lon` incluyó `longitud` y el servidor negoció UTF-16.
+- `cargo check --target wasm32-wasip2`: bloqueado porque el target no está instalado. Se decidió dejar que Zed lo instale durante la reinstalación de la dev extension.
 
 ## Bloqueos y límites
 
-No hay fallos automatizados abiertos al finalizar estas pruebas. La única validación pendiente es la integración real con la interfaz de Zed. El CLI no ofrece un comando de instalación de dev extensions y esta sesión no controla la GUI.
+La compilación WebAssembly final y la integración del LSP con la interfaz de Zed quedan pendientes de reinstalar la dev extension. El CLI no ofrece un comando de instalación de dev extensions y esta sesión no controla la GUI.
 
 No se midió rendimiento en Zed. Los tiempos del parser de otros archivos o del repositorio de gramática no se presentan como tiempos de apertura o edición en Zed.

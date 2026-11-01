@@ -7,6 +7,13 @@ description = "Language support for Quetzal"
 repository = "https://github.com/AntaresGT/lenguaje-quetzal-zed-extension"
 snippets = ["./snippets/quetzal.json"]
 
+[language_servers.quetzal-lsp]
+name = "Quetzal LSP"
+languages = ["Quetzal"]
+
+[language_servers.quetzal-lsp.language_ids]
+"Quetzal" = "quetzal"
+
 [grammars.quetzal]
 repository = "https://github.com/AntaresGT/tree-sitter-quetzal"
 rev = "769de1c803cb00ba9863bb68735caf306d7857a1"

@@ -3,28 +3,36 @@
 ## Requisitos
 
 - Zed compatible con `schema_version = 1`; el entorno auditado usa Zed 1.26.2 en Linux.
-- Acceso de red para que Zed obtenga la gramática fijada y, si hace falta, `wasi-sdk`.
-- Un compilador C proporcionado por el entorno de Zed para la gramática. Esta extensión no contiene código Rust ni requiere compilar un componente WebAssembly propio.
+- Acceso de red para que Zed obtenga la gramática fijada, las dependencias de Rust y, si hace falta, `wasi-sdk`.
+- Rust con `rustup` y el target `wasm32-wasip2`. Zed puede instalar el target automáticamente al compilar la extensión.
+- Un compilador C proporcionado por el entorno de Zed para la gramática.
 
-No se necesita instalar el intérprete de Quetzal ni `quetzal-lsp`.
+No se necesita instalar el intérprete de Quetzal. Para habilitar diagnósticos, autocompletado, hover e ir a definición, instala el LSP oficial desde la raíz de `lenguaje-quetzal`:
+
+```bash
+cargo install --path crates/lsp
+```
+
+Comprueba que `quetzal-lsp` esté en el `PATH` con `command -v quetzal-lsp`. Sin ese ejecutable, el resto de la extensión sigue disponible.
 
 ## Instalar la dev extension
 
 1. Abre Zed y ve a **Extensions**.
 2. Pulsa **Install Dev Extension** o ejecuta la acción `zed: install dev extension`.
 3. Selecciona la carpeta que contiene `extension.toml`.
-4. Espera a que termine la descarga y compilación de `tree-sitter-quetzal`.
+4. Espera a que termine la compilación del componente WebAssembly y de `tree-sitter-quetzal`.
 5. Abre `pruebas/casos/declaraciones.qz`.
 6. Comprueba que el selector de lenguaje muestra **Quetzal**.
 7. Para ver el icono de los archivos `.qz`, abre el selector de temas de iconos de Zed y elige **Quetzal Icons**. La extensión no cambia automáticamente tu tema de iconos actual.
 
-Si cambias el manifiesto, las queries, los snippets o el tema de iconos y Zed no refleja el cambio, vuelve a instalar la dev extension. Revisa el estado anterior antes de desinstalar para poder distinguir un fallo nuevo de uno persistente.
+Si cambias el manifiesto, el código Rust, las queries, los snippets o el tema de iconos y Zed no refleja el cambio, vuelve a instalar la dev extension. Revisa el estado anterior antes de desinstalar para poder distinguir un fallo nuevo de uno persistente.
 
 ## Diagnóstico de carga
 
-- Ejecuta `zed: open log` y busca errores de manifiesto, descarga, WASI o compilación de la gramática.
+- Ejecuta `zed: open log` y busca errores de manifiesto, descarga, Rust, WASI o compilación de la gramática.
 - Para registros más detallados, cierra Zed y ábrelo manualmente desde una terminal con `zed --foreground`.
 - Si `wasi-sdk` ya está instalado, `WASI_SDK_PATH` debe señalar al directorio que contiene `bin/clang`.
+- Si Zed no encuentra el LSP, abre Zed desde un entorno donde `command -v quetzal-lsp` funcione y revisa que el proyecto sea de confianza.
 - Un error de una query suele indicar el archivo y la posición; verifica que coincida con los nodos de la revisión fijada, no con otra versión de la gramática.
 
 ## Pruebas interactivas

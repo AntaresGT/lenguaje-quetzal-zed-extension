@@ -42,10 +42,14 @@ def validar():
     assert gramatica["repository"] == "https://github.com/AntaresGT/tree-sitter-quetzal"
     assert re.fullmatch(r"[0-9a-f]{40}", gramatica["rev"])
     assert gramatica["rev"] == "769de1c803cb00ba9863bb68735caf306d7857a1"
-    assert "language_servers" not in manifiesto
-    assert not (RAIZ / "Cargo.toml").exists()
-    assert not (RAIZ / "src/lib.rs").exists()
-    comprobaciones += 6
+    assert set(manifiesto["language_servers"]) == {"quetzal-lsp"}
+    servidor_lsp = manifiesto["language_servers"]["quetzal-lsp"]
+    assert servidor_lsp["name"] == "Quetzal LSP"
+    assert servidor_lsp["languages"] == ["Quetzal"]
+    assert servidor_lsp["language_ids"] == {"Quetzal": "quetzal"}
+    assert (RAIZ / "Cargo.toml").is_file()
+    assert (RAIZ / "src/lib.rs").is_file()
+    comprobaciones += 9
 
     rutas_snippets = manifiesto["snippets"]
     assert rutas_snippets == ["./snippets/quetzal.json"]
@@ -56,7 +60,7 @@ def validar():
     assert snippets
     prefijos = set()
     for nombre, snippet in snippets.items():
-        assert nombre and snippet["description"].isascii()
+        assert nombre and snippet["description"]
         assert snippet["prefix"] not in prefijos
         prefijos.add(snippet["prefix"])
         cuerpo = snippet["body"]

@@ -13,16 +13,13 @@ Todos los cambios notables de esta extensión se documentarán aquí.
 - Indentación sintáctica y reglas para `sino` y secciones de visibilidad.
 - Outline de funciones, objetos, prototipos, métodos y constructores, con contexto para miembros.
 - Objetos de texto para funciones, clases y comentarios en modo Vim.
-- Trece snippets limitados a Quetzal y basados en su sintaxis tipada.
+- Trece snippets limitados a Quetzal y basados en su sintaxis tipada, con nombres y descripciones en español.
 - Tema opcional `Quetzal Icons`, con variantes clara y oscura e icono para archivos `.qz`.
 - Logo del lenguaje en el README y recurso PNG optimizado para el editor.
+- Integración con `quetzal-lsp` externo para diagnósticos, autocompletado, hover e ir a definición.
 - Casos de prueba, validación estática y documentación de instalación y publicación manual.
 
 ### Pendiente de verificación manual
 
-- Instalación como dev extension y comportamiento interactivo en Zed.
+- Comportamiento interactivo del LSP en Zed.
 - Apariencia en temas claros y oscuros, indentación, plegado, snippets y rendimiento en el editor.
-
-### Fuera de alcance
-
-- Servidor LSP, diagnósticos semánticos, autocompletado semántico, hover y navegación por símbolos mediante LSP.

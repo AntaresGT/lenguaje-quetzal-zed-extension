@@ -26,7 +26,7 @@ git diff
 Conecta o corrige el remoto solo si hace falta. Después, el usuario decide y ejecuta personalmente sus operaciones de versión, por ejemplo:
 
 ```bash
-git add extension.toml languages snippets icon_themes icons imagenes pruebas docs README.md CHANGELOG.md LICENSE .gitignore
+git add extension.toml Cargo.toml Cargo.lock src languages snippets icon_themes icons imagenes pruebas docs README.md CHANGELOG.md LICENSE .gitignore
 git commit -m "Add Quetzal language support for Zed"
 git push -u origin main
 ```

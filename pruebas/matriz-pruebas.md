@@ -21,6 +21,7 @@ Estados permitidos en los resultados: **aprobado**, **fallido** o **no ejecutado
 | QZ-015 | Desinstalar y reinstalar la dev extension tras un cambio de query. | No quedan fallos persistentes ni versiones contradictorias de la extensión. |
 | QZ-016 | En modo Vim, probar `af`, `if`, `ac`, `ic` y `gc` en declaraciones y comentarios. | Se seleccionan las estructuras esperadas; si el modo Vim no se usa, registrar no ejecutado. |
 | QZ-017 | Seleccionar **Quetzal Icons** en el selector de temas de iconos y revisar archivos `.qz` y de otros tipos con apariencia clara y oscura. | Los `.qz` muestran el icono Quetzal; el resto conserva el comportamiento de respaldo de Zed y no desaparece. |
+| QZ-018 | Con `quetzal-lsp` en `PATH`, abrir un `.qz` y probar `Ctrl+Space`, hover, diagnósticos e ir a definición. | Zed inicia **Quetzal LSP** y responde con información del documento actual, incluidos cambios sin guardar. |
 
 ## Preparación de archivos de rendimiento
 

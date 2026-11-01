@@ -15,8 +15,9 @@ Language support for [Lenguaje Quetzal](https://github.com/AntaresGT/lenguaje-qu
 - Language-scoped snippets for official Quetzal syntax.
 - Line and block comment highlighting.
 - Optional light and dark **Quetzal Icons** theme with a dedicated `.qz` file icon.
+- Diagnostics, completion, hover, and go-to-definition through the official `quetzal-lsp` when it is installed.
 
-The extension does not execute Quetzal code and does not include a language server. Semantic diagnostics, type checking, semantic completion, hover, go-to-definition, and renaming are not provided by this version.
+The extension does not execute Quetzal code or bundle the language server. It looks for `quetzal-lsp` on `PATH` and starts it with `--stdio`. Without that executable, syntax highlighting, indentation, outline, and snippets remain available, but LSP features are not.
 
 ## File icons
 
@@ -27,10 +28,10 @@ After installing or reinstalling the dev extension, open Zed's icon theme select
 1. Open Zed's **Extensions** page.
 2. Select **Install Dev Extension**.
 3. Choose this repository's directory.
-4. Wait for Zed to download and compile the pinned grammar.
+4. Wait for Zed to compile the extension and the pinned grammar.
 5. Open a `.qz` file and confirm that **Quetzal** is the active language.
 
-Zed may download `wasi-sdk` to compile the grammar. No Rust extension code, `quetzal-lsp`, or Quetzal interpreter installation is required. See [the development installation guide](docs/instalacion-desarrollo.md) for troubleshooting and validation instructions.
+Zed may download `wasi-sdk` and install the Rust `wasm32-wasip2` target. To enable LSP features, install the official server from the Quetzal repository with `cargo install --path crates/lsp` and make sure `quetzal-lsp` is on `PATH`. The Quetzal interpreter is not required. See [the development installation guide](docs/instalacion-desarrollo.md) for troubleshooting and validation instructions.
 
 ## Example
 

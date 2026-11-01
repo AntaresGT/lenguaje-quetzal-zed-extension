@@ -1,4 +1,6 @@
 .tmp/
+/grammars/
+/target/
 *.wasm
 *.so
 *.dylib

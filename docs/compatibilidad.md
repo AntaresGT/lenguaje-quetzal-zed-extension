@@ -41,12 +41,14 @@ Zed admite `repository` y `rev` en `[grammars.quetzal]`; la revisión no apunta 
 - El ID es kebab-case, no contiene `zed` ni `extension`, y coincide con el lenguaje.
 - La extensión incluye licencia MIT propia, una de las licencias aceptadas por Zed.
 - La gramática declara licencia MIT en `tree-sitter.json` y `package.json`. La revisión fijada no contiene un archivo `LICENSE` en su raíz; esta observación no cambia la atribución ni la licencia declarada.
-- Los textos de la galería y las descripciones de snippets están en inglés. La documentación de desarrollo permanece en español.
+- Los textos de la galería están en inglés y las descripciones de snippets en español. La documentación de desarrollo permanece en español.
 
 Fuentes: [requisitos de publicación](https://zed.dev/docs/extensions/publishing/prerequisites), [licencias](https://zed.dev/docs/extensions/publishing/license-requirements) y [registro oficial](https://github.com/zed-industries/extensions).
 
 ## LSP y límites
 
-`AntaresGT/lenguaje-quetzal/crates/lsp/Leeme.md` declara el servidor como **futuro**. No se ha comprobado un ejecutable `quetzal-lsp` operativo. Por ello no existen entradas `language_servers`, `Cargo.toml` ni `src/lib.rs` en este MVP.
+`AntaresGT/lenguaje-quetzal/crates/lsp/Leeme.md` documenta un servidor operativo con diagnósticos, autocompletado, hover y navegación a definiciones. La extensión lo busca como `quetzal-lsp` en el `PATH` del worktree y lo inicia con `--stdio`; no incluye el ejecutable ni instala el LSP automáticamente.
 
-Tree-sitter aporta análisis sintáctico incremental, no diagnósticos semánticos, comprobación de tipos ni completado semántico. La instalación, el resaltado visual, la indentación, el outline, el plegado, los snippets y los temas requieren validación manual en Zed; los resultados automatizados se registran aparte en `pruebas/resultados.md`.
+El componente Rust de `src/lib.rs` usa `zed_extension_api` 0.7.0 y se compila a `wasm32-wasip2`. El manifiesto asocia el servidor con el lenguaje **Quetzal** y asigna el identificador LSP `quetzal`.
+
+Tree-sitter por sí solo aporta análisis sintáctico incremental, no diagnósticos semánticos ni completado semántico; esas funciones dependen del LSP externo. La instalación, el arranque del servidor y las funciones interactivas requieren validación manual en Zed; los resultados automatizados se registran aparte en `pruebas/resultados.md`.
